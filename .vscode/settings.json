@@ -1,0 +1,17 @@
+{
+  "search.exclude": {
+    "**/.sst": true
+  },
+  "editor.formatOnSave": true,
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "eslint.format.enable": false,
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "typescript.format.enable": false,
+  "prettier.enable": false
+}

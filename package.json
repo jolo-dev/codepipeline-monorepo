@@ -1,0 +1,31 @@
+{
+  "name": "aws-ug-codepipeline-demo",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "sst dev",
+    "build": "npx sst build --to cdk.out --stage dev --profile dev-genius-admin",
+    "deploy": "sst deploy",
+    "remove": "sst remove",
+    "console": "sst console",
+    "typecheck": "tsc --noEmit",
+    "check": "npx @biomejs/biome check --apply .",
+    "watch-infra": "nodemon --watch stacks/PipelineStack.ts --exec \"pnpm run build\"",
+    "watch": "nodemon --watch .sst/dist/jolo-aws-ug-codepipeline-demo-PipelineStack.template.json --exec \"npx cfn-dia d -co .sst/dist/ -s -c -e [\"AWS::IAM::Role\",\"AWS::IAM::Policy\",\"AWS::S3::BucketPolicy\"]\""
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.4.1",
+    "@mhlabs/cfn-diagram": "^1.1.38",
+    "@tsconfig/node18": "^18.2.2",
+    "@types/sharp": "^0.32.0",
+    "aws-cdk-lib": "2.110.1",
+    "constructs": "10.3.0",
+    "nodemon": "^3.0.2",
+    "sst": "^2.38.7",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "sharp": "^0.33.1"
+  }
+}
